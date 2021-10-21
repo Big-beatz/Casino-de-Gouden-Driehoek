@@ -1,5 +1,6 @@
 package novi.higherlower;
 
+ import java.util.Random;
  import java.util.Scanner;
 
     public class HigherLowerGame {
@@ -14,12 +15,30 @@ package novi.higherlower;
             gameIsRunning = true;
 
             // Here you should generate the number to guess
+            Random winningNumber = new Random();
+            int upperbound = 101;
+            int randomWinningnumber = winningNumber.nextInt(upperbound);
+//            System.out.println("Het winnende nummer is " + randomWinningnumber);
+            int amountOfTurns = 0;
 
             while (gameIsRunning) {
                 System.out.println("Make a guess");
 
-                var input = inputScanner.nextLine();
-                System.out.printf("You typed: %s\n", input);
+                var input = inputScanner.nextInt();
+                System.out.println("You typed: " + input);
+
+                if (input < randomWinningnumber){
+                    amountOfTurns++;
+                    System.out.println("That number is too low!");
+                } else if (input > randomWinningnumber){
+                    amountOfTurns++;
+                    System.out.println("That number is too high");
+                }else if (input == randomWinningnumber){
+                    amountOfTurns++;
+                    gameIsRunning = false;
+                    System.out.println("Correct! You guessed the number in " + amountOfTurns +" turns");
+                }
+
 
                 // Check if the guess is correct, if so end the game
             }
