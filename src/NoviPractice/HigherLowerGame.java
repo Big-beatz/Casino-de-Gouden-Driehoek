@@ -1,4 +1,4 @@
-package novi.higherlower;
+package NoviPractice;
 
  import java.util.Random;
  import java.util.Scanner;
@@ -6,7 +6,7 @@ package novi.higherlower;
     public class HigherLowerGame {
         private Scanner inputScanner;
         private boolean gameIsRunning;
-
+        //Consructor
         public HigherLowerGame(Scanner inputScanner) {
             this.inputScanner = inputScanner;
         }
